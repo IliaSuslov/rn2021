@@ -16,14 +16,7 @@ const images = [
     image: photo3,
   },
 ];
-
-const Item = ({ item }) => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={item.image} />
-    </View>
-  );
-};              
+         
 export function Slider() {
   return (
     <ScrollView style={styles.container} horizontal={true}>

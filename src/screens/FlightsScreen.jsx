@@ -1,7 +1,5 @@
 import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-
-//Components
 import FlightItem from "../components/FlightItem";
 
 function FlightsScreen(props) {

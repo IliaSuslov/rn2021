@@ -1,9 +1,8 @@
 import { takeEvery, put, call } from 'redux-saga/effects'
 import { showLoader, hideLoader } from './actions'
 import { FETCH_POSTS, REQUEST_POSTS } from './types'
-import {RapidapiKey} from "../../api_key.json"
+import { RapidapiKey } from "../../api_key.json"
 
-console.log(RapidapiKey);
 export function* sagaWatcher() {
     yield takeEvery(REQUEST_POSTS, sagaWorker)
 }
@@ -20,7 +19,6 @@ function* sagaWorker() {
     }
 
 }
-
 
 async function fetchRoutes() {
     const response = await
