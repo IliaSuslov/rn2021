@@ -16,12 +16,12 @@ const images = [
     image: photo3,
   },
 ];
-         
+
 export function Slider() {
   return (
     <ScrollView style={styles.container} horizontal={true}>
       {images.map((v, i) => (
-        <View key={i}>
+        <View key={i} style={styles.imagecon}>
           <Image style={styles.image} key={i} source={v.image} />
         </View>
       ))}
@@ -30,16 +30,17 @@ export function Slider() {
 }
 const styles = StyleSheet.create({
   container: {
-    shadowColor: "#C4C4C4",
+    marginLeft: 30,
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
     elevation: 5,
-    marginLeft: 30,
-    width: "100%",
+    overflow: 'visible'
   },
   image: {
     height: 200,
