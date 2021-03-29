@@ -1,5 +1,4 @@
 import { takeEvery, put, call } from 'redux-saga/effects'
-import { showLoader, hideLoader } from './actions'
 import { FETCH_POSTS, REQUEST_POSTS } from './types'
 import { RapidapiKey } from "../../api_key.json"
 
@@ -9,10 +8,8 @@ export function* sagaWatcher() {
 
 function* sagaWorker() {
     try {
-        yield put(showLoader())
         const payload = yield call(fetchRoutes)
         yield put({ type: FETCH_POSTS, payload })
-        yield put(hideLoader())
     }
     catch (e) {
         console.log('Error', e);

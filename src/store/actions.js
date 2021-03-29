@@ -1,16 +1,4 @@
-import { REQUEST_POSTS, SHOW_LOADER, HIDE_LOADER, SWITCH_FAV, SWITCH_PAGE } from './types';
-
-export function showLoader() {
-    return {
-        type: SHOW_LOADER
-    }
-}
-
-export function hideLoader() {
-    return {
-        type: HIDE_LOADER
-    }
-}
+import { REQUEST_POSTS, SWITCH_FAV, SWITCH_PAGE } from './types';
 
 export function switchFav(payload) {
     return {

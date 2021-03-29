@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData } from "../store/actions";
 import FlightsScreen from "./FlightsScreen";
+import Loader from "../components/Loader";
 
 const GetPlace = (Places) => (id) =>
   Places.filter((place) => place.PlaceId == id)[0];
@@ -22,6 +23,7 @@ const serialize = ({ GetPlace, GetCarrier, Symbol }) => (quote) => {
 function FHOC({ navigation }) {
   const dispatch = useDispatch();
   const flights = useSelector((state) => state.flights);
+  const app = useSelector((state) => state.app);
   const page = useSelector((state) => state.flights.page);
 
   useEffect(() => {
@@ -40,7 +42,9 @@ function FHOC({ navigation }) {
       page={page}
       navigation={navigation}
     />
-  ) : null;
+  ) : (
+    <Loader />
+  );
 }
 
 export default FHOC;
